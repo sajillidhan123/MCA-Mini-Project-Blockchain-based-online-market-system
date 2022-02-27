@@ -1,0 +1,81 @@
+{% include 'userheader.html' %}
+<!--==========================
+      Facts Section
+    ============================-->
+    <section id="facts"  class="wow fadeIn">
+      <div class="container">
+
+        <header class="section-header">
+
+<center>
+	<form method="post">
+        <br>
+        <br>
+        
+		<h3 style="color: white">View Product</h3>
+		
+		<table align="right">
+			<tr>
+				<th colspan="2" align="center">Search By Category</th>
+			</tr>
+			<tr>
+				<td>
+						<select name="category" id="category">
+ 					 	<option value="fashion">Fashion</option>
+ 						<option value="sports">Sports</option>
+ 						<option value="electronics">Electronics</option>
+ 						<option value="beauty">Beauty</option>
+ 
+						</select>
+				</td>
+				<td>
+					<input type="submit" name="submit" value="SEARCH">
+				</td>
+			</tr>
+</table>
+<br>
+<br>
+
+		<table class="table" border="1" style="width:800px">
+			<tr>
+				
+
+
+			</tr>
+
+			<tr>
+				<th>Seller Name</th>
+
+				<th>Place</th>
+
+				<th>Phone</th>
+
+				<th>Email</th>
+
+				<th>Category</th>
+
+				<th>Products</th>
+			</tr>
+			
+				{% for row in data['pdt']%}
+				<tr>
+				<td>{{row['firstname']}} {{row['lastname']}}</td>
+				<td>{{row['place']}}</td>
+				<td>{{row['phone']}}</td>
+				<td>{{row['email']}}</td>
+				<td>{{row['category']}}</td>
+	
+
+				<td><a class="btn btn-warning" href="userviewallproduct?seller_id={{row['seller_id']}}&quantity={{row['quantity']}}">View product</a></td>
+
+				{%endfor%}
+
+			</tr>
+			
+		</table>
+	</form>
+</center>
+<br><br><br><br><br><br><br><br><br><br>
+
+</header></div></section>
+{% include 'footer.html' %}

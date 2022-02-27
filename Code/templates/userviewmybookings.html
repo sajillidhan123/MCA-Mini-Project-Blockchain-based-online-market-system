@@ -1,0 +1,60 @@
+{% include 'userheader.html' %}
+
+ <!--==========================
+      Facts Section
+    ============================-->
+    <section id="facts"  class="wow fadeIn">
+      <div class="container">
+
+        <header class="section-header">
+        	<br>
+        	<br>
+          <h3 style="color: white">My Booking</h3>
+<!--           <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+ -->        
+
+       
+        
+<br>
+<br>
+<center>
+	<form method="post">
+		<h1></h1>
+		<table class="table" border="1" style="width:700px">
+			<tr>
+				<th>Seller Name</th>
+
+				<th>Product</th>
+
+				<th>Quantity</th>
+
+				<th>Amount</th>
+				<th>Total</th>
+				<th>Date</th>
+				<th>status</th>
+
+			</tr>
+				{% for row in data['bookings']%}
+							<tr>
+
+				<td>{{row['firstname']}} {{row['lastname']}}</td>
+				<td>{{row['product']}}</td>
+				<td>{{row['quantity']}}</td>
+				<td>{{row['amount']}}</td>
+				<td>{{row['total']}}</td>
+				<td>{{row['date']}}</td>
+				<td>{{row['status']}}</td>
+				
+			</tr>
+
+				{%endfor%}
+			
+		</table>
+	</form>
+</center><br><br><br><br><br><br><br><br><br><br>
+
+</header>
+      </div>
+    </section><!-- #facts -->
+
+{% include 'footer.html' %}

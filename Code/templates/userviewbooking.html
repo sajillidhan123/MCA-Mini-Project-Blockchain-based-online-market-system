@@ -1,0 +1,35 @@
+{% include 'adminheader.html' %}
+<section id="facts"  class="wow fadeIn">
+      <div class="container">
+
+        <header class="section-header">
+
+<center>
+	<form method="post">
+		<h3 style="color: white">View Booking</h3>
+		<table class="table" style="width:500px">
+			<tr>
+				<th>Seller Name</th>
+				<th>Total</th>
+				<th>Date</th>
+
+			</tr>
+			
+				{% for row in data['booking']%}
+				<tr>
+				<td>{{row['firstname']}} {{row['lastname']}}</td>
+				<td>{{row['total']}}</td>
+				<td>{{row['date']}}</td>
+				<td><a href="userviewdetails?omaster_id={{row['']}}"></a></td>
+				</tr>
+				{%endfor%}
+			
+			
+		</table>
+	</form>
+</center>
+<br><br><br><br><br><br><br><br><br><br>
+
+</header></div></section>
+
+{% include 'footer.html' %}

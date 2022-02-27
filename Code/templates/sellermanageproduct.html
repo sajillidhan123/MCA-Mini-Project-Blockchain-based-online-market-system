@@ -1,0 +1,89 @@
+{% include 'sellerheader.html' %}
+
+ <!--==========================
+      Facts Section
+    ============================-->
+    <section id="facts"  class="wow fadeIn">
+      <div class="container">
+
+        <header class="section-header">
+
+<center>
+	<form method="post" style="margin-top: 70px">
+		{% if data['updatepdt'] %}
+	<h3 style="color: white">Update Manage Product</h3>
+	
+		<table class="table" style="width:500px" border="1">
+			<tr>
+				<th>Product Name</th>
+				<td><input type="text" name="p" required class="form-control" value="{{data['updatepdt'][0]['product']}}" ></td>
+			</tr>
+			<tr>
+				<th>Quantity</th>
+				<td><input type="text" name="q" required class="form-control" pattern="[1-9][0-9]+$" value="{{data['updatepdt'][0]['quantity']}}"></td>
+			</tr>
+			<tr>
+				<th>Amount</th>
+				<td><input type="text" name="a" required class="form-control" pattern="[1-9][0-9]+$"value="{{data['updatepdt'][0]['amount']}}"></td>
+			</tr>
+				<tr>
+				<td align="center" colspan="2"><input type="submit" name="update" value="UPDATE" class="btn btn-success"></td>
+			</tr>
+		</table>
+		{% else %}
+		<h3 style="color: white"> Manage Product</h3>
+	
+		<table class="table" style="width: 500px" border="1">
+			<tr>
+				<th>Product Name</th>
+				<td><input type="text" name="p" required class="form-control" ></td>
+			</tr>
+			<tr>
+				<th>Quantity</th>
+				<td><input type="text" name="q" required class="form-control" pattern="[1-9][0-9]+$"></td>
+			</tr>
+			<tr>
+				<th>Amount</th>
+				<td><input type="text" name="a" required class="form-control" pattern="[1-9][0-9]+$"></td>
+			</tr>
+			<tr>
+				<td align="center" colspan="2"><input type="submit" name="add" value="ADD" class="btn btn-success"></td>
+			</tr>
+		</table>
+		{% endif %}
+        <br>
+		<h3 style="color: white">View Product</h3>
+		<table class="table" border="1" style="width:600px">
+			<tr>
+
+				<th>Product Name</th>
+
+				<th>Quantity</th>
+
+				<th>Amount</th>
+				<th>Update/Delete</th>
+
+			</tr>
+			<tr>
+				{% for row in data['pdt']%}
+				
+				<td>{{row['product']}}</td>
+				<td>{{row['quantity']}}</td>
+				<td>{{row['amount']}}</td>
+
+				<td>
+				<a class="btn btn-warning" href="?action=update&pid={{row['product_id']}}">update</a>
+				<a class="btn btn-danger" href="?action=delete&pid={{row['product_id']}}">delete</a>
+				</td>
+			</tr>
+			{% endfor%}
+		</table>
+
+</form>
+</center>
+</header>
+      </div>
+    </section><!-- #facts -->
+
+
+{% include 'footer.html' %}

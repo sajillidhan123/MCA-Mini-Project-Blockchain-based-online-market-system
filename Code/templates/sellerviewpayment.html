@@ -1,0 +1,42 @@
+{% include 'sellerheader.html' %}
+<section id="facts"  class="wow fadeIn">
+      <div class="container">
+
+        <header class="section-header">
+
+<center>
+	<form method="post">
+		<h3 style="color: white">View Payment</h3>
+		<table class="table" style="width:500px">
+			<tr>
+				<th>User Name</th>
+
+				<th>Product</th>
+
+				<th>Quantity</th>
+
+				
+				<th>Total</th>
+				<th>Date</th>
+				<th>status</th>
+
+			</tr>
+				{% for row in data['payments']%}
+							<tr>
+
+				<td>{{row['firstname']}} {{row['lastname']}}</td>
+				<td>{{row['product']}}</td>
+				<td>{{row['quantity']}}</td>
+				<td>{{row['amount']}}</td>
+				
+				<td>{{row['date']}}</td>
+				<td>{{row['status']}}</td>
+				
+			</tr>
+
+				{%endfor%}
+			
+		</table>
+</form></center><br><br><br><br><br><br><br><br><br><br>
+</header></div></section>
+{% include 'footer.html' %}

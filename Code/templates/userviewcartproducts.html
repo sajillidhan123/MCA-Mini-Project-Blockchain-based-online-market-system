@@ -1,0 +1,46 @@
+{% include 'userheader.html' %}
+<!--==========================
+      Facts Section
+    ============================-->
+    <section id="facts"  class="wow fadeIn">
+      <div class="container">
+
+        <header class="section-header">
+
+<center>
+	<form method="post">
+		<h3 style="color: white">View Product Details</h3>
+		
+
+		<table class="table" style="width:500px">
+			<tr>
+
+				<th>Product Name</th>
+
+				<th>Quantity</th>
+
+				<th>Amount</th>
+
+			</tr>
+			
+				{% for row in data['pdt']%}
+				<tr>
+				<td>{{row['product']}}</td>
+				<td>{{row['quantity']}}</td>
+				<td>{{row['amount']}}</td>
+
+				
+
+				{%endfor%}
+
+			</tr>
+			
+		</table>
+
+		
+	</form>
+</center>
+<br><br><br><br><br><br><br><br><br><br>
+
+</header></div></section>
+{% include 'footer.html' %}

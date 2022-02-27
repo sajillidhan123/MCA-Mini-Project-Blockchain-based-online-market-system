@@ -1,0 +1,77 @@
+{% include 'publicheader.html' %}
+	
+
+	<section id="intro">
+    <div class="intro-container">
+      <!-- <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel"> -->
+
+
+        <div class="carousel-inner" role="listbox">
+
+          <div class="carousel-item active">
+            <div class="carousel-background"><img src="/static/img/intro-carousel/2.jpg" alt=""></div>
+            <div class="carousel-container">
+              <div class="carousel-content">
+              	
+
+       <style type="text/css">
+       	.table{
+       		width:460px;
+       		color: white;
+       	}
+       </style>
+<center >
+
+<form method="post" style="margin-bottom:10px" >
+
+                  
+                <font color="white">
+                <h3>User Registration</h3></font>
+
+                <div style="">	
+ 		<table class="table" border="1">
+			<tr>
+				<th>First Name</th>
+				<td><input type="text" name="f" required class="form-control" pattern="[A-Z a-z]+$"></td>
+			</tr>
+			<tr>
+				<th>Last Name</th>
+				<td><input type="text" name="l" required class="form-control" pattern="[A-Z a-z]+$"></td>
+			</tr>
+			<tr>
+				<th>Place</th>
+				<td><input type="text" name="pl" required class="form-control" pattern="[A-Z a-z]+$"></td>
+			</tr>
+			<tr>
+				<th>Phone</th>
+				<td><input type="text" name="ph" required class="form-control" pattern="[0-9]+$"></td>
+			</tr>
+			<tr>
+				<th>Email</th>
+				<td><input type="text" name="e" required class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"></td>
+			</tr>
+			
+			<tr>
+				<th>Username</th>
+				<td><input type="text" name="u" required class="form-control" pattern="[A-Z a-z 0-9 @]+$"></td>
+			<tr>
+				<th>Password</th>
+				<td><input type="password" name="p" required class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{8,}+$" minlength="8" placeholder="Minimum 8 length"></td>
+			</tr>
+			<tr>
+				<td align="center" colspan="2"><input type="submit" name="register" value="REGISTER" class="btn btn-success"></td>
+			
+
+</tr></table></center></form>
+
+ 
+ </div>
+            </div>
+          </div>
+
+          
+      </div>
+    </div>
+  </section><!-- #intro -->
+
+{% include 'footer.html' %}

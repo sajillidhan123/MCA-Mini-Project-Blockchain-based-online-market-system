@@ -1,0 +1,62 @@
+{% include 'userheader.html' %}
+
+ <!--==========================
+      Facts Section
+    ============================-->
+    <section id="facts"  class="wow fadeIn">
+      <div class="container">
+
+        <header class="section-header">
+        	 <br>
+          <br>
+          <h3 style="color: white">View My Cart</h3>
+
+<!--           <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+ -->        
+
+       
+        
+<br>
+          <br>
+<center>
+	<form method="post">
+		<h1></h1>
+		<table class="table" border="1" style="width:900px">
+			<tr>
+				<th>Seller Name</th>
+				<th>Product</th>
+				<th>Quantity</th>
+				<th>Amount</th>
+				<th>Total</th>
+				<th>Date</th>
+                <th>Status</th>
+			</tr>
+				{% for row in data['bookings']%}
+							<tr>
+
+				<td>{{row['firstname']}} {{row['lastname']}}</td>
+				<td>{{row['product']}}</td>
+				<td>{{row['quantity']}}</td>
+				<td>{{row['amount']}}</td>
+				<td>{{row['total']}}</td>
+				<td>{{row['date']}}</td>
+				<td>{{row['status']}}</td>
+				<td><a href="userbook?action=update&omaster_id={{row['omaster_id']}}&qty={{row['quantity']}}&amt={{row['amount']}}&pid={{row['product_id']}}">update</a></td>
+				<td><a href="?action=delete&omaster_id={{row['omaster_id']}}&amount={{row['amount']}}&odetail_id={{row['odetail_id']}}">delete</a></td>
+			
+
+	<td align="center" colspan="2"><a href="usermakepayment?omaster_id={{row['omaster_id']}}&total={{row['total']}}&seller_id={{row['seller_id']}}">book</a><!-- <input type="submit" name="book" value="BOOK" class="btn btn-info"> --></td>
+	</tr>
+</tr>
+				{%endfor%}
+			
+		</table>
+		<table></table>
+	</form>
+</center><br><br><br><br><br><br><br><br><br><br>
+
+</header>
+      </div>
+    </section><!-- #facts -->
+
+{% include 'footer.html' %}

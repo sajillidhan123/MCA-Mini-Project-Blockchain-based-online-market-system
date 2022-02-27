@@ -1,0 +1,71 @@
+{% include 'userheader.html' %}
+<!--==========================
+      Facts Section
+    ============================-->
+    <section id="facts"  class="wow fadeIn">
+      <div class="container">
+
+        <header class="section-header">
+
+<script type="text/javascript">
+function textChange(){
+    var a=document.getElementById("quant").value;
+    var b=document.getElementById("quan").value;
+    var c=document.getElementById("amm").value;
+    if(parseInt(a)>=parseInt(b))
+    {
+    	var tot=parseInt(b)*parseInt(c);
+	}
+	else{
+		alert("Enter quantity lesser than current quantity")
+		var tot="";
+	}
+
+    document.getElementById("total").value=tot;
+
+  }
+  
+</script>
+
+
+
+<center>
+	<form method="post">
+
+		<br>
+		<br>
+		<h3 style="color: white">Book Product</h3>
+		<br>
+		<br>
+		<table class="table" border="1" style="width:500px">
+			<tr>
+				<th>Product Quantity</th>
+				<td><input type="text" readonly="" name="pq" id="quant" value="{{ data['quant']}}"  class="form-control"></td>
+			</tr>
+			<tr>				
+				<th>Amount</th>
+				<td><input type="text" readonly="" name="am" id="amm" value="{{data['amm']}}" class="form-control"></td>
+			</tr>
+			<tr>
+						<th>Quantity</th>
+				
+				<td><input type="text" name="qu" id="quan" class="form-control" onchange="textChange()"></td>
+			</tr>
+			
+			<tr>				
+				<th>Total</th>
+				<td><input type="text" name="to" id="total" value="" class="form-control"></td>
+			</tr>
+<tr>
+	<td align="center" colspan="2"><input type="submit" name="book" value="update" class="btn btn-info"></td>
+</tr>
+
+			</tr>
+			
+		</table>
+	</form>
+</center>
+<br><br><br><br><br><br><br><br><br><br>
+
+</header></div></section>
+{% include 'footer.html' %}

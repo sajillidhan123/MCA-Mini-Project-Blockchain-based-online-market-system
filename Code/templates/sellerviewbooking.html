@@ -1,0 +1,54 @@
+{% include 'sellerheader.html' %}
+
+ <!--==========================
+      Facts Section
+    ============================-->
+    <section id="facts"  class="wow fadeIn">
+      <div class="container">
+
+        <header class="section-header">
+          <h3 style="color: white">View Booking</h3>
+<!--           <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+ -->        
+
+       
+        
+
+<center>
+	<form method="post">
+		<h1></h1>
+		<table class="table" border=1 style="width:500px">
+			<tr>
+				<th>User Name</th>	
+				<th>Total</th>
+				<th>Date</th>
+
+			</tr>
+				{% for row in data['bookings']%}
+							<tr>
+
+				<td>{{row['firstname']}} {{row['lastname']}}</td>
+		
+				
+			
+				<td>{{row['total']}}</td>
+				<td>{{row['date']}}</td>
+				<td><a class="btn btn-info" href="sellerviewpayment?omaster_id={{row['omaster_id']}}">view payment</a></td>
+				{% if row['status']=="paid"%}
+				<td><a class="btn btn-danger" href="?action=deliver&omaster_id={{row['omaster_id']}}">update status as deliver</a></td>
+				{% else %}
+				<td>{{row['status']}}</td>
+				{% endif %}
+			</tr>
+
+				{%endfor%}
+			
+		</table>
+	</form>
+</center><br><br><br><br><br><br><br><br><br><br>
+
+</header>
+      </div>
+    </section><!-- #facts -->
+
+{% include 'footer.html' %}

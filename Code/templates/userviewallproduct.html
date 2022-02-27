@@ -1,0 +1,67 @@
+{% include 'userheader.html' %}
+<!--==========================
+      Facts Section
+    ============================-->
+    <section id="facts"  class="wow fadeIn">
+      <div class="container">
+
+        <header class="section-header">
+
+<center>
+	<form method="post">
+		{% if data['pdt'] %}
+		<br>
+		<br>
+		<h3 style="color: white">View Product</h3>
+		<table align="center">
+			<tr>
+				<td><input type="text" class="container" name="search"></td>
+				<td><input type="submit" name="search" value="search"></td>
+			</tr>
+			
+
+		</table>
+			
+       <br>
+
+        <br>
+		<table class="table" border="1" style="width:500px">
+			<tr>
+
+				<th>Product Name</th>
+
+				<th>Quantity</th>
+
+				<th>Amount</th>
+
+				<th>Cart</th>
+
+			</tr>
+			
+				{% for row in data['pdt']%}
+				<tr>
+				<td>{{row['product']}}</td>
+				<td>{{row['quantity']}}</td>
+				<td>{{row['amount']}}</td>
+				{% if row['quantity'] |int <= 0 %}
+				<td>OUTOF STOCK</td>
+				{% else %}
+				
+				<td><a class="btn btn-warning" href="?action=cart&seller_id={{row['seller_id']}}&pid={{row['product_id']}}&qty={{row['quantity']}}&amt={{row['amount']}}">add to cart</a></td>
+				{% endif %}
+
+				{%endfor%}
+
+			</tr>
+			
+		</table>
+		{% else %}
+
+		<h1 style="color: white">NO PRODUCTS </h1>
+		{% endif %}
+	</form>
+</center>
+<br><br><br><br><br><br><br><br><br><br>
+
+</header></div></section>
+{% include 'footer.html' %}

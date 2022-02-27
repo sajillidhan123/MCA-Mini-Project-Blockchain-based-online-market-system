@@ -1,0 +1,37 @@
+{% include 'userheader.html' %}
+<!--==========================
+      Facts Section
+    ============================-->
+    <section id="facts"  class="wow fadeIn">
+      <div class="container">
+
+        <header class="section-header">
+
+<center>
+	<form method="post">
+		<h3 style="color: white">View Wallet</h3>
+		
+		<table class="table" style="width:500px">
+			<tr>
+
+				<th>Wallet Amount</th>
+
+			</tr>
+			
+				{% for row in data['view']%}
+				<tr>
+				<td>{{row['wamount']}}</td>
+				<td><a class="btn btn-info" href="useraddmoneytowallet?user_id={{row['user_id']}}">add to wallet</a></td>
+			</tr>
+
+				{%endfor%}
+
+			
+		</table>
+		
+	</form>
+</center>
+<br><br><br><br><br><br><br><br><br><br>
+
+</header></div></section>
+{% include 'footer.html' %}

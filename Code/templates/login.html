@@ -1,0 +1,47 @@
+{% include 'publicheader.html' %}
+
+<section id="intro">
+    <div class="intro-container">
+      <!-- <div id="introCarousel" class="carousel  slide carousel-fade" data-ride="carousel"> -->
+
+
+        <div class="carousel-inner" role="listbox">
+
+          <div class="carousel-item active">
+            <div class="carousel-background"><img src="/static/img/intro-carousel/3.jpg" alt=""></div>
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2>LOGIN</h2>
+
+<form method="post">
+	<center>
+		<h2></h2>
+		<table class="table" style="width: 500px;color: white" border="1">
+			<tr>
+				<th>Username</th>
+				<td><input type="text" name="un" required="" class="form-control"></td>
+			</tr>
+			<tr>
+				<th>Password</th>
+				<td><input type="password" name="pa" required="" class="form-control"></td>
+			</tr>
+			<tr>
+				<td align="center" colspan="2"><input type="submit" name="login" value="LOGIN" class="btn btn-success"></td>
+			</tr>
+		</table>
+	</center>
+</form>
+
+
+ </div>
+            </div>
+          </div>
+
+          
+      </div>
+    </div>
+  
+  </section><!-- #intro -->
+
+  
+{% include 'footer.html' %}

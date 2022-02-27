@@ -1,0 +1,40 @@
+{% include 'adminheader.html' %}
+<section id="facts"  class="wow fadeIn">
+      <div class="container">
+
+        <header class="section-header">
+
+<center>
+	<form method="post">
+		<h3 style="color: white">View Product</h3>
+		<table class="table" style="width:800px" border="1">
+			<tr>
+				<th>Seller Name</th>
+
+				<th>Product</th>
+
+				<th>Quantity</th>
+
+				<th>Amount</th>
+
+			</tr>
+			<tr>
+				{% for row in data['pdt']%}
+				
+				<td>{{row['firstname']}} {{row['lastname']}}</td>
+				<td>{{row['product']}}</td>
+				<td>{{row['quantity']}}</td>
+				<td>{{row['amount']}}</td>
+              <tr>
+				{%endfor%}
+				</tr>
+			</tr>
+
+
+		</table>
+	</form>
+</center>
+<br><br><br><br><br><br><br><br><br><br>
+
+</header></div></section>
+{% include 'footer.html' %}
